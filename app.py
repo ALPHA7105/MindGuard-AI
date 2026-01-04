@@ -54,7 +54,7 @@ if st.sidebar.button("🔄 Reset"):
     st.rerun()
 
 # --- MAIN UI ---
-st.title("🛡️ MindGuard AI")
+st.title("🧠 MindGuard AI 🛡️")
 st.markdown("### AI-Driven Mental Health Risk Detection (SDG 3.4)")
 
 # Prepare Input Data
@@ -151,4 +151,4 @@ with ins3:
     st.write("**SDG 3.4 Goal:**")
     st.write("By using this AI, we reduce risk by 40% through early awareness and self-regulation techniques.")
 
-st.caption("Ethics: Data is anonymized. AI predictions are based on patterns, not clinical diagnosis.")
+st.caption("Note: Data is anonymized. AI predictions are based on patterns, not clinical diagnosis.")
