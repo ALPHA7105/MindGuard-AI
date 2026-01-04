@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Page configuration
-st.set_page_config(page_title="MindGuard AI", page_icon="🌱", layout="wide")
+st.set_page_config(page_title="MindGuard AI", page_icon="🧠", layout="wide")
 
 # --- DATA PREPARATION & MODEL TRAINING ---
 @st.cache_resource
@@ -64,7 +64,7 @@ if st.sidebar.button("🔄 Reset All Fields"):
 analyze_btn = st.sidebar.button("Analyze My Well-being")
 
 # --- MAIN PAGE ---
-st.title("🌱 MindGuard AI: Student Mental Health Support")
+st.title("🧠 MindGuard AI: Student Mental Health Support")
 st.markdown("""
 **Goal:** Early detection of mental health risks using AI to promote **SDG 3: Good Health & Well-being**.
 This tool provides personalized coping strategies and is *not* a medical diagnosis.
