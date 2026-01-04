@@ -39,19 +39,29 @@ model, le_gender, le_mood, le_risk, feature_names = train_model()
 
 # --- SIDEBAR: USER INPUTS ---
 st.sidebar.header("Daily Wellness Check-in")
-st.sidebar.write("Please answer the following non-invasive questions:")
 
-age = st.sidebar.number_input("Age", 13, 18, 15)
-grade = st.sidebar.selectbox("Grade", [8, 9, 10, 11])
-gender = st.sidebar.selectbox("Gender", ["Male", "Female"])
-sleep = st.sidebar.slider("Sleep Hours last night", 0.0, 12.0, 7.0)
-screen = st.sidebar.slider("Screen Time (Hours)", 0.0, 12.0, 4.0)
-academic = st.sidebar.slider("Academic Load (1-5)", 1, 5, 3)
-stress = st.sidebar.slider("Stress Level (1-10)", 1.0, 10.0, 5.0)
-physical = st.sidebar.number_input("Physical Activity (Minutes)", 0, 180, 30)
-social = st.sidebar.slider("Social Interaction Level (1-5)", 1, 5, 3)
-attendance = st.sidebar.slider("Attendance %", 50, 100, 90)
-mood = st.sidebar.selectbox("Current Mood", ["Low", "Neutral", "Good"])
+# Adding 'key' to each widget allows the reset button to find and clear them
+age = st.sidebar.number_input("Age", 13, 18, 15, key="age_val")
+grade = st.sidebar.selectbox("Grade", [8, 9, 10, 11], key="grade_val")
+gender = st.sidebar.selectbox("Gender", ["Male", "Female"], key="gender_val")
+sleep = st.sidebar.slider("Sleep Hours last night", 0.0, 12.0, 7.0, key="sleep_val")
+screen = st.sidebar.slider("Screen Time (Hours)", 0.0, 12.0, 4.0, key="screen_val")
+academic = st.sidebar.slider("Academic Load (1-5)", 1, 5, 3, key="acad_val")
+stress = st.sidebar.slider("Stress Level (1-10)", 1.0, 10.0, 5.0, key="stress_val")
+physical = st.sidebar.number_input("Physical Activity (Minutes)", 0, 180, 30, key="phys_val")
+social = st.sidebar.slider("Social Interaction Level (1-5)", 1, 5, 3, key="social_val")
+attendance = st.sidebar.slider("Attendance %", 50, 100, 90, key="att_val")
+mood = st.sidebar.selectbox("Current Mood", ["Low", "Neutral", "Good"], key="mood_val")
+
+st.sidebar.divider()
+
+# The Reset Button
+if st.sidebar.button("🔄 Reset All Fields"):
+    st.session_state.clear()
+    st.rerun()
+
+# The Analyze Button
+analyze_btn = st.sidebar.button("Analyze My Well-being")
 
 # --- MAIN PAGE ---
 st.title("🌱 MindGuard AI: Student Mental Health Support")
